@@ -50,7 +50,7 @@ public class Search {
     }
 
         // ---------------------------- P A R T I A L  S E A R C H -----------------------------------
-        public static int indexSearch(MyArrayList<Customer> arr, String target, String value) throws Exception {
+        public static int indexSearch(MyArrayList<Customer> arr, String target, String value) {
 
             int left = 0;  // set index
             int right = arr.size() - 1;
@@ -73,7 +73,7 @@ public class Search {
             return -1;
         }
 
-        public static void valueSearch(MyArrayList<Customer> arr, int index, String value) throws Exception {
+        public static void valueSearch(MyArrayList<Customer> arr, int index, String value) {
 
             // loop to left side
             for (int i = index - 1; i > index - 10; i--) {

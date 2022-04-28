@@ -14,6 +14,13 @@ public class Customer {
             this.phone = phone;
         }
 
+        public Customer(String[] temp) {
+            this.ID = temp[0];
+            this.firstName = temp[1];
+            this.lastName = temp[2];
+            this.phone = temp[3];
+        }
+
         // empty constructor
         public Customer() {}
 

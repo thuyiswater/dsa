@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception{
 
-        MyArrayList<Customer> customerList = new MyArrayList<>();
+        String[] customerList = new String[1000000000];
         DataHandler.readFile(customerList);
 
         while (true) {
@@ -46,6 +46,7 @@ public class Main {
                     System.out.print("\nPlease select an option by enter the number: ");
                     Scanner input2 = new Scanner(System.in);
                     int option2 = input2.nextInt();
+
                     if (option2 == 1) {
                         Search.exactSearch(customerList);
                     } else {
@@ -55,7 +56,7 @@ public class Main {
                 }
                 case 4 -> {
                     System.out.println("Goodbye!");
-                    DataHandler.writeFile(customerList);
+//                    DataHandler.writeFile(customerList);
                     System.exit(0);
                 }
                 default -> {
