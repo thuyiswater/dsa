@@ -16,12 +16,13 @@ public class UpdateCustomer {
         // notify if user not exist
         if (index == -1) {
             System.out.println("No user found");
+            Buffer.buff();
             return;
         }
 
         while (true) {
             System.out.print("""
-                       Which field do you want to update
+                       \nWhich field do you want to update
                        1. First name
                        2. Last name
                        3. Phone
@@ -29,20 +30,20 @@ public class UpdateCustomer {
                        Select an option by enter a number:\s""");
             int option = sc.nextInt();
 
-            Customer cus = new Customer();
-
             if (option == 1) {
                 System.out.print("Enter new first name: ");
-                cus.setFirstName(sc.nextLine());
+                arr.get(index).setFirstName(sc.next());
                 System.out.println("\nUpdate successfully");
                 Buffer.buff();
             } else if (option == 2) {
                 System.out.print("Enter new last name: ");
-                cus.setLastName(sc.nextLine());
+                arr.get(index).setLastName(sc.next());
                 System.out.println("Update successfully");
-            } else if (option == 4) {
-                break;
-            }
+            } else if (option == 3) {
+                System.out.print("Enter new phone number: ");
+                arr.get(index).setPhone(sc.next());
+                System.out.println("Update successfully");
+            } else break;
         }
     }
 }
