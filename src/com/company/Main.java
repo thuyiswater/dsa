@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception{
 
-        String[] customerList = new String[1000000000];
+        MyArrayList<Customer> customerList = new MyArrayList<>();
         DataHandler.readFile(customerList);
 
         while (true) {
@@ -56,7 +56,6 @@ public class Main {
                 }
                 case 4 -> {
                     System.out.println("Goodbye!");
-//                    DataHandler.writeFile(customerList);
                     System.exit(0);
                 }
                 default -> {
