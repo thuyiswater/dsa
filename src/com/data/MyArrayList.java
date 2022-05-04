@@ -1,7 +1,5 @@
 package com.data;
 
-import java.util.Arrays;
-
 public class MyArrayList<T> {
     private Customer[] customers;
     private int size;
@@ -24,11 +22,10 @@ public class MyArrayList<T> {
 
     // method: add element to a specific position
     public void add(int index, T obj) {
-        if (size == customers.length) {
-            increaseCapa();
-        }
-        for (int i = size - 1; i > index - 1; i--) {
-            customers[i + 1] = customers[i];
+        if (size == customers.length) increaseCapa();
+
+        if (size - 1 - (index - 1) >= 0) {
+            System.arraycopy(customers, index, customers, index + 1, size - 1 - (index - 1));
         }
         customers[index] = (Customer) obj;
         size++;
@@ -37,7 +34,7 @@ public class MyArrayList<T> {
         // method: return element of a specific position
     public Customer get(int index) {
         if (index < size) {
-            return (Customer) customers[index];
+            return customers[index];
         }
         throw new ArrayIndexOutOfBoundsException();
     }
@@ -46,10 +43,8 @@ public class MyArrayList<T> {
     private void increaseCapa() {
         int newSize = customers.length * 2;
 
-        Customer newData[] = new Customer[newSize];
-        for (int i = 0; i < customers.length; i++) {
-            newData[i] = customers[i];
-        }
+        Customer[] newData = new Customer[newSize];
+        System.arraycopy(customers, 0, newData, 0, customers.length);
         customers = newData;
     }
 
