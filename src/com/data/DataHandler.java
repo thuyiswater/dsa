@@ -1,7 +1,5 @@
 package com.data;
 
-import com.features.AddCustomer;
-
 import java.io.*;
 
 public class DataHandler {
@@ -17,6 +15,5 @@ public class DataHandler {
             s.add(cus);
         }
         reader.close();
-
     }
 }
