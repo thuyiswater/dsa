@@ -1,7 +1,6 @@
 package com.features;
 
 import java.util.*;
-
 import com.data.Customer;
 import com.data.MyArrayList;
 
@@ -11,7 +10,7 @@ public class Search {
     static Scanner input = new Scanner(System.in);  // get user input
 
         // ----------------------------- B I N A R Y  S E A R C H ------------------------------------
-    public static int binarySearch(MyArrayList<Customer> arr, String value) throws Exception {
+    public static int binarySearch(MyArrayList<Customer> arr, String value) {
 
         int left = 0;  // set index
         int right = arr.size() - 1;

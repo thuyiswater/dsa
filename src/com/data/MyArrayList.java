@@ -21,7 +21,7 @@ public class MyArrayList<T> {
     }
 
     // method: add element to a specific position
-    public void add(int index, T obj) {
+    public void set(int index, T obj) {
         if (size == customers.length) increaseCapa();
 
         if (size - 1 - (index - 1) >= 0) {

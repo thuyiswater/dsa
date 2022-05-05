@@ -2,10 +2,7 @@ package com.company;
 
 import java.util.*;
 
-import com.data.Buffer;
-import com.data.Customer;
-import com.data.DataHandler;
-import com.data.MyArrayList;
+import com.data.*;
 import com.features.AddCustomer;
 import com.features.Search;
 import com.features.UpdateCustomer;
@@ -16,6 +13,10 @@ public class Main {
 
         MyArrayList<Customer> customerList = new MyArrayList<>();
         DataHandler.readFile(customerList);
+
+        for(int i = 0; i < customerList.size(); i++) {
+            System.out.println(customerList.get(i));
+        }
 
         while (true) {
             Scanner input = new Scanner(System.in);
