@@ -32,7 +32,7 @@ public class Search {
 
 
         // ------------------------------ E X A C T  S E A R C H -------------------------------------
-    public static void exactSearch(MyArrayList<Customer> arr) throws Exception {
+    public static void exactSearch(MyArrayList<Customer> arr) {
         System.out.print("Please enter a complete user's ID: ");
         String value = input.nextLine();  // get input
 
@@ -91,7 +91,7 @@ public class Search {
             }
         }
 
-        public static void partialSearch(MyArrayList<Customer> arr) throws Exception {
+        public static void partialSearch(MyArrayList<Customer> arr) {
             System.out.print("\nPlease enter customer's ID (5 -> 8 letters): ");
             String value = input.nextLine();  // get input
 

@@ -6,7 +6,7 @@ import com.data.MyArrayList;
 
 public class AddCustomer {
     static Scanner input = new Scanner(System.in);
-    public static void insert(MyArrayList<Customer> arr) throws Exception {
+    public static void insert(MyArrayList<Customer> arr) {
         Customer value = new Customer();
         System.out.println("\nPlease enter a new customer's information: ");
         System.out.print("\nID: ");
