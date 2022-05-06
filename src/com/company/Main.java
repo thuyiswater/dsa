@@ -9,13 +9,12 @@ import com.features.UpdateCustomer;
 public class Main {
 
     public static void main(String[] args) throws Exception{
-
         MyArrayList<Customer> customerList = new MyArrayList<>();
         DataHandler.readFile(customerList);
+        MergeSort ms = new MergeSort();
+        int n = customerList.size();
 
-        for(int i = 0; i < customerList.size(); i++) {
-            System.out.println(customerList.get(i));
-        }
+        ms.qSort(customerList, 0, n - 1);
 
         while (true) {
             Scanner input = new Scanner(System.in);

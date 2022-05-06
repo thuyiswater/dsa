@@ -16,7 +16,6 @@ public class UpdateCustomer {
         // notify if user not exist
         if (index == -1) {
             System.out.println("No user found");
-            Buffer.buff();
             return;
         }
 

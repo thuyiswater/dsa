@@ -48,11 +48,11 @@ public class AddCustomer {
         }
         // add value
         else if (value.getID().compareTo(arr.get(left).getID()) < 0) {
-            arr.set(left, value);
+            arr.add(left, value);
         }
         // biggest value
         else if (value.getID().compareTo(arr.get(left).getID()) > 0) {
-            arr.set(left + 1, value);
+            arr.add(left + 1, value);
         } else return false;
 
         return true;

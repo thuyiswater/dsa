@@ -1,6 +1,6 @@
 package com.data;
 
-public class Customer {
+public class Customer implements Comparable<Customer> {
         private String ID;
         private String firstName;
         private String lastName;
@@ -52,11 +52,19 @@ public class Customer {
             this.phone = phone;
         }
 
-
         //print out
         @Override
         public String toString() {
             return (String.format("%s %s %s %s", ID, firstName, lastName, phone));
         }
+
+    public int compareTo(Customer o) {
+        Customer e = o;
+        if(this.ID.compareTo(e.getID()) > 0)
+            return 1;
+        if(this.ID.compareTo(e.getID()) < 0)
+            return -1;
+        return 0;
+    }
 }
 

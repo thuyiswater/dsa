@@ -12,7 +12,7 @@ public class MyArrayList<T> {
         size = 0;
     }
 
-    //method: add element to the last position
+    // add element to the last position
     public void add(T obj) {
         if (size == customers.length) {
             increaseCapa();
@@ -20,8 +20,8 @@ public class MyArrayList<T> {
         customers[size++] = (Customer) obj;
     }
 
-    // method: add element to a specific position
-    public void set(int index, T obj) {
+    // add element to a specific position
+    public void add(int index, T obj) {
         if (size == customers.length) increaseCapa();
 
         if (size - 1 - (index - 1) >= 0) {
@@ -31,7 +31,7 @@ public class MyArrayList<T> {
         size++;
     }
 
-        // method: return element of a specific position
+    // return to an element of a specific position
     public Customer get(int index) {
         if (index < size) {
             return customers[index];
@@ -48,7 +48,20 @@ public class MyArrayList<T> {
         customers = newData;
     }
 
-        // return number of element in arrays, not full capacity
+    // return number of element in arrays, not full capacity
     public int size() { return size; }
+
+    public Customer set(int index, Customer newCus) {
+        if (index < 0 || index >= size()) throw new ArrayIndexOutOfBoundsException();
+        Customer old = customers[index];
+        customers[index] = newCus;
+        return old;
+    }
+
+    public void swap(MyArrayList<Customer> list, int i, int j) {
+        Customer e = list.get(i);
+        list.set(i, list.get(j));
+        list.set(j, e);
+    }
 }
 
