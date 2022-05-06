@@ -11,10 +11,8 @@ public class Main {
     public static void main(String[] args) throws Exception{
         MyArrayList<Customer> customerList = new MyArrayList<>();
         DataHandler.readFile(customerList);
-        MergeSort ms = new MergeSort();
-        int n = customerList.size();
-
-        ms.qSort(customerList, 0, n - 1);
+        QuickSort ms = new QuickSort();
+        ms.qSort(customerList, 0, customerList.size() - 1);
 
         while (true) {
             Scanner input = new Scanner(System.in);

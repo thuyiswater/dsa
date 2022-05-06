@@ -51,6 +51,7 @@ public class MyArrayList<T> {
     // return number of element in arrays, not full capacity
     public int size() { return size; }
 
+    //
     public Customer set(int index, Customer newCus) {
         if (index < 0 || index >= size()) throw new ArrayIndexOutOfBoundsException();
         Customer old = customers[index];

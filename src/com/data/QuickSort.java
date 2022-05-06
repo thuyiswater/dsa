@@ -1,7 +1,7 @@
 package com.data;
 
-public class MergeSort {
-    public MergeSort() {}
+public class QuickSort {
+    public QuickSort() {}
     public int partition(MyArrayList<Customer> arr, int low, int high) {
         Customer pivot = arr.get(high);
         int i = (low - 1);
@@ -11,7 +11,6 @@ public class MergeSort {
             // equal to pivot
             if (arr.get(j).compareTo(pivot) <= 0) {
                 i++;
-
                 // swap arr[i] and arr[j]
                 arr.swap(arr, i, j);
             }
