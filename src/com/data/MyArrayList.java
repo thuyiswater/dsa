@@ -14,25 +14,32 @@ public class MyArrayList<T> {
 
     // add element to the last position
     public void add(T obj) {
+        // check if have enough capacity
         if (size == customers.length) {
             increaseCapa();
         }
+        // add element to the size position then increase the size by 1
         customers[size++] = (Customer) obj;
     }
 
     // add element to a specific position
     public void add(int index, T obj) {
+        // check if have enough capacity
         if (size == customers.length) increaseCapa();
 
+        // copy the elements from the i position to the current array
         if (size - 1 - (index - 1) >= 0) {
             System.arraycopy(customers, index, customers, index + 1, size - 1 - (index - 1));
         }
+
+        // add element to the index position
         customers[index] = (Customer) obj;
         size++;
     }
 
-    // return to an element of a specific position
+    // return an element of a specific position
     public Customer get(int index) {
+        // check if index in the range
         if (index < size) {
             return customers[index];
         }
@@ -43,6 +50,7 @@ public class MyArrayList<T> {
     private void increaseCapa() {
         int newSize = customers.length * 2;
 
+        // copy old elements to the new arraylist
         Customer[] newData = new Customer[newSize];
         System.arraycopy(customers, 0, newData, 0, customers.length);
         customers = newData;
@@ -51,17 +59,22 @@ public class MyArrayList<T> {
     // return number of element in arrays, not full capacity
     public int size() { return size; }
 
-    //
+    // replace an element with another one
     public Customer set(int index, Customer newCus) {
+        // check if index in the range
         if (index < 0 || index >= size()) throw new ArrayIndexOutOfBoundsException();
+        // replace the old element with the new one
         Customer old = customers[index];
         customers[index] = newCus;
         return old;
     }
 
+    // swap position two elements
     public void swap(MyArrayList<Customer> list, int i, int j) {
         Customer e = list.get(i);
+        // replace element i with j
         list.set(i, list.get(j));
+        // replace element j with i
         list.set(j, e);
     }
 }
