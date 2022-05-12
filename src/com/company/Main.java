@@ -2,17 +2,16 @@ package com.company;
 
 import java.util.*;
 import com.data.*;
-import com.features.AddCustomer;
-import com.features.Search;
-import com.features.UpdateCustomer;
+import com.features.*;
 
 public class Main {
 
     public static void main(String[] args) throws Exception{
+
         MyArrayList<Customer> customerList = new MyArrayList<>();
         DataHandler.readFile(customerList);
-        QuickSort ms = new QuickSort();
-        ms.qSort(customerList, 0, customerList.size() - 1);
+        QuickSort qs = new QuickSort();
+        qs.qSort(customerList, 0, customerList.size() - 1);
 
         while (true) {
             Scanner input = new Scanner(System.in);

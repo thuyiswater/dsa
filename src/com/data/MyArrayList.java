@@ -4,7 +4,7 @@ public class MyArrayList<T> {
     private Customer[] customers;
     private int size;
     // temporary capacity of array when first created
-    private static final int DEFAULT_CAPACITY = 1002;
+    private static int DEFAULT_CAPACITY = 100000000;
 
     // constructor
     public MyArrayList() {
