@@ -13,17 +13,17 @@ public class MyArrayList<T> {
     }
 
     // add element to the last position
-    public void add(T obj) {
+    public void add(Customer obj) {
         // check if have enough capacity
         if (size == customers.length) {
             increaseCapa();
         }
         // add element to the size position then increase the size by 1
-        customers[size++] = (Customer) obj;
+        customers[size++] = obj;
     }
 
     // add element to a specific position
-    public void add(int index, T obj) {
+    public void add(int index, Customer obj) {
         // check if have enough capacity
         if (size == customers.length) increaseCapa();
 
@@ -33,7 +33,7 @@ public class MyArrayList<T> {
         }
 
         // add element to the index position
-        customers[index] = (Customer) obj;
+        customers[index] = obj;
         size++;
     }
 
