@@ -52,8 +52,10 @@ public class MyArrayList<T> {
 
         // copy old elements to the new arraylist
         Customer[] newData = new Customer[newSize];
-        System.arraycopy(customers, 0, newData, 0, customers.length);
-        customers = newData;
+        for (int i = 0; i < customers.length - 1; i++){
+            newData[i] = customers[i];
+        }
+        this.customers = newData;
     }
 
     // return number of element in arrays, not full capacity

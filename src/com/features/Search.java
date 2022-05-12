@@ -5,16 +5,19 @@ import com.data.*;
 import java.lang.Math;
 
 public class Search {
+
     static Scanner input = new Scanner(System.in);  // get user input
 
-        // ----------------------------- B I N A R Y  S E A R C H ------------------------------------
+    // ----------------------------- B I N A R Y  S E A R C H ------------------------------------
     public static int binarySearch(MyArrayList<Customer> arr, String value) {
 
         int left = 0;  // set index
         int right = arr.size() - 1;
 
         while (left <= right) {
+
             int mid = (left + right) / 2;  // middle value index
+
             if (value.compareTo(arr.get(mid).getID()) < 0) {  // go left
                 right = mid - 1;  // move pointer to left
             }
@@ -28,14 +31,16 @@ public class Search {
         return -1;  // no match result
     }
 
-
-        // ------------------------------ E X A C T  S E A R C H -------------------------------------
+    // ------------------------------ E X A C T  S E A R C H -------------------------------------
     public static void exactSearch(MyArrayList<Customer> arr) {
+
         System.out.print("Please enter a complete user's ID: ");
+
         String value = input.nextLine();  // get input
 
         int index = binarySearch(arr, value);  // result from binary search
 
+        // no user found
         if (index == -1) {
             System.out.println("No users found");
             return;
@@ -43,76 +48,79 @@ public class Search {
 
         System.out.println("User found");
         System.out.println(arr.get(index));
-
     }
 
-        // ---------------------------- P A R T I A L  S E A R C H -----------------------------------
-        public static int indexSearch(MyArrayList<Customer> arr, String target, String value) {
+    // ---------------------------- P A R T I A L  S E A R C H -----------------------------------
+    public static int indexSearch(MyArrayList<Customer> arr, String target, String value) {
 
-            int left = 0;  // set index
-            int right = arr.size() - 1;
+        int left = 0;  // set index
+        int right = arr.size() - 1;
 
-            while (left <= right) {
+        while (left <= right) {
 
-                int mid = (left + right) / 2;  // middle value index
+            int mid = (left + right) / 2;  // middle value index
 
-                if (arr.get(mid).getID().contains(value)) {
-                    return mid;
-                }
-                else if (value.compareTo(arr.get(mid).getID()) < 0) {  // go left
-                    right = mid - 1;  // move pointer to left
-                }
-                else if (value.compareTo(arr.get(mid).getID()) > 0) {  // go right
-                    left = mid + 1;  // move pointer to right
-                }
+            if (arr.get(mid).getID().contains(value)) {
+                return mid;
             }
-            // not match result
-            return -1;
-        }
-
-        public static void valueSearch(MyArrayList<Customer> arr, int index, String value) {
-
-            // loop to left side
-            for (int i = index - 1; i > index - 10; i--) {
-                if (!arr.get(i).getID().contains(value)) {  // exit if the next value does not contain the search value
-                    break;
-                }
-                System.out.println(arr.get(i));
+            else if (value.compareTo(arr.get(mid).getID()) < 0) {  // go left
+                right = mid - 1;  // move pointer to left
             }
-
-            // loop to right
-            for (int i = index + 1; i < index + 10; i++) {
-                if (!arr.get(i).getID().contains(value)) {   // exit if the next value does not contain the search value
-                    break;
-                }
-                System.out.println(arr.get(i));
+            else if (value.compareTo(arr.get(mid).getID()) > 0) {  // go right
+                left = mid + 1;  // move pointer to right
             }
         }
+        // not match result
+        return -1;
+    }
 
-        public static void partialSearch(MyArrayList<Customer> arr) {
-            System.out.print("\nPlease enter customer's ID (5 -> 8 letters): ");
-            String value = input.nextLine();  // get input
+    public static void valueSearch(MyArrayList<Customer> arr, int index, String value) {
 
-            if (value.length() < 5 || value.length() > 8) {  // search value must (5 < x < 8)
-                System.out.println("Only 5 to 8 letters!");
-                partialSearch(arr);
+        int count = 10;  // max 10 customers can be found
+        int startIndex = index;
+
+        // loop to left until reach the first ID contains search letters
+        for (int i = index - 1; i > 0; i--) {
+            if (!arr.get(i).getID().contains(value)) {  // exit if the next value does not contain the search value
+                break;
             }
-
-            // calculate number of 0 need to add
-            double zero = Math.pow(10, 10 - value.length());
-            String target = value + String.valueOf((int) zero).substring(1);  // convert to string and add to input
-
-            // binarySearch to find matching value
-            int index = indexSearch(arr, target, value);
-
-            if (index == -1) {  // no matching
-                System.out.println("\nUser not found\n");
-                return;
-            }
-
-            // loop forward and backward for matching value
-            System.out.println(arr.get(index));
-            valueSearch(arr, index, value);
+            startIndex--;  // move index to left
         }
 
+        // loop to right to get all ID contains search letters
+        for (int i = startIndex; i < arr.size() - 1; i++) {
+            if (!arr.get(i).getID().contains(value) || count < 1) {   // exit if the next value does not contain the search value
+                break;
+            }
+            System.out.println(arr.get(i));
+            count--;
+        }
+    }
+
+    public static void partialSearch(MyArrayList<Customer> arr) {
+
+        System.out.print("\nPlease enter customer's ID (5 -> 8 letters): ");
+        String value = input.nextLine();  // get input
+
+        if (value.length() < 5 || value.length() > 8) {  // search value must (5 < x < 8)
+            System.out.println("Only 5 to 8 letters!");
+            partialSearch(arr);  // recursive
+        }
+
+        // calculate number of 0 need to add
+        double zero = Math.pow(10, 10 - value.length());
+        String target = value + String.valueOf((int) zero).substring(1);  // convert to string and add to input
+
+        // binarySearch to find matching value
+        int index = indexSearch(arr, target, value);
+
+        // no matching
+        if (index == -1) {
+            System.out.println("\nUser not found\n");
+            return;
+        }
+
+        // loop forward and backward for matching value
+        valueSearch(arr, index, value);
+    }
 }
