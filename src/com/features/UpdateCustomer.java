@@ -6,7 +6,7 @@ import com.data.*;
 public class UpdateCustomer {
     static Scanner sc = new Scanner(System.in);
     public static void updateCustomer(MyArrayList<Customer> arr) throws Exception {
-        System.out.print("Please enter an user's ID: ");
+        System.out.print("\nPlease enter customer's ID: ");
         String input = sc.nextLine();
 
         // check if user exist
@@ -16,6 +16,7 @@ public class UpdateCustomer {
             return;
         }
 
+        System.out.println("Customer found!");
         while (true) {
             System.out.print("""
                        \nWhich field do you want to update

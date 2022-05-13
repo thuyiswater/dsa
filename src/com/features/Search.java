@@ -42,11 +42,11 @@ public class Search {
 
         // no user found
         if (index == -1) {
-            System.out.println("\nNo users found");
+            System.out.println("\nCustomer not found");
             return;
         }
 
-        System.out.println("\nUser found");
+        System.out.println("\nCustomer found");
         System.out.println("ID: " + arr.get(index).getID() + " | First name: " + arr.get(index).getFirstName() + " | Last name: " +
                 arr.get(index).getLastName() + " | Phone no.: " + arr.get(index).getPhone());
     }
@@ -104,10 +104,6 @@ public class Search {
         System.out.print("\nPlease enter customer's ID (5 -> 8 letters): ");
         String value = input.nextLine();  // get input
 
-        if (value.length() < 5 || value.length() > 8) {  // search value must (5 < x < 8)
-            System.out.println("Only 5 to 8 letters!");
-            partialSearch(arr);  // recursive
-        }
 
         // calculate number of 0 need to add
         double zero = Math.pow(10, 10 - value.length());
@@ -118,11 +114,11 @@ public class Search {
 
         // no matching
         if (index == -1) {
-            System.out.println("\nUser not found");
+            System.out.println("\nCustomer not found");
             return;
         }
 
-        System.out.print("\nUsers found");
+        System.out.print("\nCustomer found");
         System.out.println();
         // loop forward and backward for matching value
         valueSearch(arr, index, value);

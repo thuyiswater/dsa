@@ -8,7 +8,7 @@ public class AddCustomer {
     static Scanner input = new Scanner(System.in);
     public static void insert(MyArrayList<Customer> arr) {
         Customer value = new Customer();
-        System.out.println("\nPlease enter a new customer's information: ");
+        System.out.println("\nPlease enter new customer's information: ");
         System.out.print("ID: ");
         value.setID(input.nextLine());   // get ID
 
