@@ -28,8 +28,8 @@ public class MyArrayList<T> {
         if (size == customers.length) increaseCapa();
 
         // copy the elements from the i position to the current array
-        if (size - 1 - (index - 1) >= 0) {
-            System.arraycopy(customers, index, customers, index + 1, size - 1 - (index - 1));
+        for (int i = size - 1; i > index - 1; i--) {
+            customers[i + 1] = customers[i];
         }
 
         // add element to the index position
@@ -55,7 +55,7 @@ public class MyArrayList<T> {
         for (int i = 0; i < customers.length - 1; i++){
             newData[i] = customers[i];
         }
-        this.customers = newData;
+        customers = newData;
     }
 
     // return number of element in arrays, not full capacity

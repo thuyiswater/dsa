@@ -27,20 +27,22 @@ public class UpdateCustomer {
             int option = sc.nextInt();
 
             if (option == 1) {
-                System.out.print("Enter new first name: ");
+                System.out.print("\nEnter new first name: ");
                 arr.get(index).setFirstName(sc.next());
                 System.out.println("Update successfully");
                 Buffer.buff();
             }
             else if (option == 2) {
-                System.out.print("Enter new last name: ");
+                System.out.print("\nEnter new last name: ");
                 arr.get(index).setLastName(sc.next());
                 System.out.println("Update successfully");
+                Buffer.buff();
             }
             else if (option == 3) {
-                System.out.print("Enter new phone number: ");
+                System.out.print("\nEnter new phone number: ");
                 arr.get(index).setPhone(sc.next());
                 System.out.println("Update successfully");
+                Buffer.buff();
             }
             else break;
         }

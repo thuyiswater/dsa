@@ -16,14 +16,14 @@ public class Main {
         while (true) {
             Scanner input = new Scanner(System.in);
             System.out.println("\n\t\t\t\t\t Welcome to Record Management for Intelligent Tracking (RMIT)");
-            System.out.println("Menu: ");
             System.out.print("""
+                    Menu:
                     1. Add a new customer
                     2. Update an existing customer
-                    3. Search for customers
+                    3. Search customer
                     4. Exit
                     """);
-            System.out.print("\nPlease select an option by enter the number: ");
+            System.out.print("Please select an option by enter the number: ");
             int option = input.nextInt();
 
             switch (option) {
@@ -33,22 +33,28 @@ public class Main {
                 }
                 case 2 -> {
                     UpdateCustomer.updateCustomer(customerList);
-                    Buffer.buff();
                 }
                 case 3 -> {
-                    System.out.println("\nSearch type: ");
-                    System.out.println("1. Search for one customer");
-                    System.out.println("2. Search for a list of customer");
-                    System.out.print("\nPlease select an option by enter the number: ");
-                    Scanner input2 = new Scanner(System.in);
-                    int option2 = input2.nextInt();
+                    while (true) {
+                        System.out.print("""
+                                \nSearch type:
+                                1. Search for one customer
+                                2. Search for a list of customer
+                                3. Exit
+                                Select an option by enter a number:\s""");
+                        Scanner input2 = new Scanner(System.in);
+                        int option2 = input2.nextInt();
 
-                    if (option2 == 1) {
-                        Search.exactSearch(customerList);
-                    } else {
-                        Search.partialSearch(customerList);
+                        if (option2 == 1) {
+                            Search.exactSearch(customerList);
+                            Buffer.buff();
+                        }
+                        else if (option2 == 2){
+                            Search.partialSearch(customerList);
+                            Buffer.buff();
+                        }
+                        else break;
                     }
-                    Buffer.buff();
                 }
                 case 4 -> {
                     System.out.println("Goodbye!");

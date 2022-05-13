@@ -9,23 +9,23 @@ public class AddCustomer {
     public static void insert(MyArrayList<Customer> arr) {
         Customer value = new Customer();
         System.out.println("\nPlease enter a new customer's information: ");
-        System.out.print("\nID: ");
+        System.out.print("ID: ");
         value.setID(input.nextLine());   // get ID
 
-        System.out.print("\nFirst name: ");
+        System.out.print("First name: ");
         value.setFirstName(input.nextLine());  // get First name
 
-        System.out.print("\nLast name: ");
+        System.out.print("Last name: ");
         value.setLastName(input.nextLine());  // get Last name
 
-        System.out.print("\nPhone number: ");
+        System.out.print("Phone number: ");
         value.setPhone(input.nextLine());  // get Phone no.
 
         // call function to add user
         if (add(arr, value)) {
-            System.out.println("\nSuccessfully added!\n");
+            System.out.println("\nSuccessfully added!");
         } else {
-            System.out.println("\nCustomer already exists\n");
+            System.out.println("\nCustomer already exists");
         }
     }
 

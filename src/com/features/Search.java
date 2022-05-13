@@ -42,12 +42,13 @@ public class Search {
 
         // no user found
         if (index == -1) {
-            System.out.println("No users found");
+            System.out.println("\nNo users found");
             return;
         }
 
-        System.out.println("User found");
-        System.out.println(arr.get(index));
+        System.out.println("\nUser found");
+        System.out.println("ID: " + arr.get(index).getID() + " | First name: " + arr.get(index).getFirstName() + " | Last name: " +
+                arr.get(index).getLastName() + " | Phone no.: " + arr.get(index).getPhone());
     }
 
     // ---------------------------- P A R T I A L  S E A R C H -----------------------------------
@@ -92,7 +93,8 @@ public class Search {
             if (!arr.get(i).getID().contains(value) || count < 1) {   // exit if the next value does not contain the search value
                 break;
             }
-            System.out.println(arr.get(i));
+            System.out.println("ID: " + arr.get(i).getID() + " | First name: " + arr.get(i).getFirstName() + " | Last name: " +
+                    arr.get(i).getLastName() + " | Phone no.: " + arr.get(i).getPhone());
             count--;
         }
     }
@@ -116,10 +118,12 @@ public class Search {
 
         // no matching
         if (index == -1) {
-            System.out.println("\nUser not found\n");
+            System.out.println("\nUser not found");
             return;
         }
 
+        System.out.print("\nUsers found");
+        System.out.println();
         // loop forward and backward for matching value
         valueSearch(arr, index, value);
     }
