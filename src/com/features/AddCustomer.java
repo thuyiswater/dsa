@@ -10,22 +10,27 @@ public class AddCustomer {
         Customer value = new Customer();
         System.out.println("\nPlease enter new customer's information: ");
         System.out.print("ID: ");
-        value.setID(input.nextLine());   // get ID
+        String id = input.nextLine();
 
-        System.out.print("First name: ");
-        value.setFirstName(input.nextLine());  // get First name
+        int index = Search.binarySearch(arr, id);
+        // do nothing if user not exist
+        if (index != -1) {
+            System.out.println("Customer already exists");
+        }
+        else {
+            value.setID(id);   // set ID
 
-        System.out.print("Last name: ");
-        value.setLastName(input.nextLine());  // get Last name
+            System.out.print("First name: ");
+            value.setFirstName(input.nextLine());  // set First name
 
-        System.out.print("Phone number: ");
-        value.setPhone(input.nextLine());  // get Phone no.
+            System.out.print("Last name: ");
+            value.setLastName(input.nextLine());  // set Last name
 
-        // call function to add user
-        if (add(arr, value)) {
+            System.out.print("Phone number: ");
+            value.setPhone(input.nextLine());  // set Phone no.
+
+            add(arr, value);
             System.out.println("\nSuccessfully added!");
-        } else {
-            System.out.println("\nCustomer already exists");
         }
     }
 

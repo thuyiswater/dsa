@@ -17,7 +17,7 @@ public class Main {
             Scanner input = new Scanner(System.in);
             System.out.println("\n\t\t\t\t\t Welcome to Record Management for Intelligent Tracking (RMIT)");
             System.out.print("""
-                    \nMenu:
+                    Menu:
                     1. Add a new customer
                     2. Update an existing customer
                     3. Search customer
