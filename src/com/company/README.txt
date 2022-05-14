@@ -1,7 +1,7 @@
 Group Contribution:
+s3877664 | Lam Tin Dieu | 25%
+s3878058 | Nguyen Hai Minh Trang | 20%
+s3877961 | Le Ngoc Nguyen Thuan | 20%
+s3877746 | Mai Chieu Thuy | 30%
 
-s3877664 | Lam Tin Dieu | 5 points s3878058 | Nguyen Hai Minh Trang | 5 points s3877961 | Le Ngoc Nguyen Thuan | 5 points s3877746 | Mai Chieu Thuy | 5 points
-
-(All members contributed equally)
-
-Video link:
+Video link: https://bit.ly/3MeIwMj

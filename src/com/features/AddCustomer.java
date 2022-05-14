@@ -58,7 +58,8 @@ public class AddCustomer {
         // biggest value
         else if (value.getID().compareTo(arr.get(left).getID()) > 0) {
             arr.add(left + 1, value);
-        } else return false;
+        }
+        else return false;
 
         return true;
     }

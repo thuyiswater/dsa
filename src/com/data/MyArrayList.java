@@ -4,7 +4,7 @@ public class MyArrayList<T> {
     private Customer[] customers;
     private int size;
     // temporary capacity of array when first created
-    private static int DEFAULT_CAPACITY = 100000000;
+    private static final int DEFAULT_CAPACITY = 100000000;
 
     // constructor
     public MyArrayList() {
@@ -62,13 +62,10 @@ public class MyArrayList<T> {
     public int size() { return size; }
 
     // replace an element with another one
-    public Customer set(int index, Customer newCus) {
+    public void set(int index, Customer newCus) {
         // check if index in the range
         if (index < 0 || index >= size()) throw new ArrayIndexOutOfBoundsException();
-        // replace the old element with the new one
-        Customer old = customers[index];
         customers[index] = newCus;
-        return old;
     }
 
     // swap position two elements
@@ -80,4 +77,3 @@ public class MyArrayList<T> {
         list.set(j, e);
     }
 }
-
