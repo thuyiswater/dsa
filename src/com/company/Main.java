@@ -7,6 +7,7 @@ import com.features.*;
 public class Main {
 
     public static void main(String[] args) throws Exception{
+
         MyArrayList<Customer> customerList = new MyArrayList<>();
         DataHandler.readFile(customerList);
         QuickSort qs = new QuickSort();

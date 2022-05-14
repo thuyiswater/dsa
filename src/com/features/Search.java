@@ -112,8 +112,7 @@ public class Search {
             return;
         }
 
-        System.out.print("\nCustomer found");
-        System.out.println();
+        System.out.println("\nCustomer found");
         // loop forward and backward for matching value
         valueSearch(arr, index, value);
     }

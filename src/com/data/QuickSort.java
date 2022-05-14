@@ -1,14 +1,15 @@
 package com.data;
 
 public class QuickSort {
+    // constructor
     public QuickSort() {}
     public int partition(MyArrayList<Customer> arr, int low, int high) {
-        Customer pivot = arr.get(high);
+        String pivot = arr.get(high).getID();
         int i = (low - 1);
 
         for (int j = low; j <= high - 1; j++) {
             // if current element is smaller than or equal to pivot
-            if (arr.get(j).compareTo(pivot) <= 0) {
+            if (arr.get(j).getID().compareTo(pivot) <= 0) {
                 i++;
                 // swap arr[i] and arr[j]
                 arr.swap(arr, i, j);
