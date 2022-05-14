@@ -4,7 +4,7 @@ import java.io.*;
 
 public class DataHandler {
     public static void readFile(MyArrayList<Customer> s) throws Exception {
-        BufferedReader reader = new BufferedReader(new FileReader("D:\\IntellJ\\IdeaProjects\\dsa\\src\\com\\data\\customer.csv")); // read file
+        BufferedReader reader = new BufferedReader(new FileReader("D:\\IntellJ\\IdeaProjects\\Project_Group5\\dsa\\src\\com\\data\\customer.csv")); // read file
         reader.readLine(); // skip 1st line
         String row;
 
