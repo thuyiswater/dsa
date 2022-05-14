@@ -5,12 +5,10 @@ import com.data.*;
 import java.lang.Math;
 
 public class Search {
-
     static Scanner input = new Scanner(System.in);  // get user input
 
     // ----------------------------- B I N A R Y  S E A R C H ------------------------------------
     public static int binarySearch(MyArrayList<Customer> arr, String value) {
-
         int left = 0;  // set index
         int right = arr.size() - 1;
 
@@ -33,7 +31,6 @@ public class Search {
 
     // ------------------------------ E X A C T  S E A R C H -------------------------------------
     public static void exactSearch(MyArrayList<Customer> arr) {
-
         System.out.print("\nPlease enter a complete user's ID: ");
 
         String value = input.nextLine();  // get input
@@ -53,7 +50,6 @@ public class Search {
 
     // ---------------------------- P A R T I A L  S E A R C H -----------------------------------
     public static int indexSearch(MyArrayList<Customer> arr, String target, String value) {
-
         int left = 0;  // set index
         int right = arr.size() - 1;
 
@@ -76,7 +72,6 @@ public class Search {
     }
 
     public static void valueSearch(MyArrayList<Customer> arr, int index, String value) {
-
         int count = 10;  // max 10 customers can be found
         int startIndex = index;
 
@@ -100,7 +95,6 @@ public class Search {
     }
 
     public static void partialSearch(MyArrayList<Customer> arr) {
-
         System.out.print("\nPlease enter customer's ID (5 -> 8 letters): ");
         String value = input.nextLine();  // get input
 

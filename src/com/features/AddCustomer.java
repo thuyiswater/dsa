@@ -13,7 +13,7 @@ public class AddCustomer {
         String id = input.nextLine();
 
         int index = Search.binarySearch(arr, id);
-        // do nothing if user not exist
+        // send notification if user not exist
         if (index != -1) {
             System.out.println("Customer already exists");
         }
